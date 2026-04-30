@@ -3,9 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>C-SERVICE BUSINESS | PRO MAX</title>
 
+<meta name="description" content="C-SERVICE BUSINESS - Création site web, design, montage vidéo, marketing digital">
+
+<link rel="icon" href="logo.png">
+
 <style>
+
+html {
+scroll-behavior: smooth;
+}
+
 body{
 margin:0;
 font-family:Arial;
@@ -39,6 +49,20 @@ text-decoration:none;
 font-size:14px;
 }
 
+/* HERO */
+.hero{
+padding:20px;
+text-align:center;
+}
+
+.hero h2{
+color:#38bdf8;
+}
+
+.hero p{
+color:#cbd5e1;
+}
+
 /* BUTTON APP */
 .app-btn{
 text-align:center;
@@ -58,6 +82,7 @@ font-weight:bold;
 .container{
 padding:20px;
 text-align:center;
+animation: fadeIn 0.8s ease-in;
 }
 
 .card{
@@ -101,9 +126,17 @@ background:#0f172a;
 margin-top:30px;
 font-size:12px;
 }
+
+/* ANIMATION */
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(20px);}
+to {opacity:1; transform:translateY(0);}
+}
+
 </style>
 
 </head>
+
 <body>
 
 <header>
@@ -116,12 +149,24 @@ C-SERVICE BUSINESS 💼 | PRO MAX
 <a href="#services">Services</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
-<a href="intent://haddock619.github.io/c-service-businness/#Intent;scheme=https;package=com.webtoapp;end">
+
+<a href="https://haddock619.github.io/c-service-businness/" target="_blank">
 📱 App
 </a>
 </nav>
 
-<div class="container">
+<!-- ACCUEIL -->
+<div class="hero" id="accueil">
+<h2>🚀 C-SERVICE BUSINESS</h2>
+<p>Nous créons des solutions digitales professionnelles pour booster ton activité</p>
+
+<div class="app-btn">
+<a href="#services">Voir nos services</a>
+</div>
+</div>
+
+<!-- SERVICES -->
+<div class="container" id="services">
 
 <h2>Choisis ton service</h2>
 
@@ -140,15 +185,35 @@ C-SERVICE BUSINESS 💼 | PRO MAX
 <button class="pay" onclick="payer('Design Logo',20)">Payer</button>
 </div>
 
+</div>
+
+<!-- PORTFOLIO -->
+<div class="container" id="portfolio">
+
+<h2>📁 Nos réalisations</h2>
+
+<div class="card">✔ Logo professionnel créé</div>
+<div class="card">✔ Sites web business réalisés</div>
+<div class="card">✔ Montages vidéo publicitaires</div>
+
+</div>
+
 <!-- CONTACT -->
+<div class="container" id="contact">
+
+<h2>📞 Contact & Commande</h2>
+
 <div class="card">
+
 <h3>Commande rapide</h3>
+
 <input id="nom" placeholder="Ton nom"><br><br>
 <input id="tel" placeholder="Téléphone"><br><br>
 
 <button class="whatsapp" onclick="whatsapp()">
 Commander via WhatsApp
 </button>
+
 </div>
 
 </div>
@@ -164,18 +229,37 @@ href="https://wa.me/243848681325?text=Bonjour%20je%20veux%20commander">
 </footer>
 
 <script>
+
 function payer(service, prix){
+
+let nom = document.getElementById("nom").value;
+let tel = document.getElementById("tel").value;
+
+if(!nom || !tel){
+alert("Remplis ton nom et téléphone");
+return;
+}
+
+alert("Commande envoyée sur WhatsApp ✔");
+
 window.open("https://wa.me/243848681325?text=Je%20veux%20payer%20"+service+"%20-"+prix+"$");
 }
 
 function whatsapp(){
-let nom=document.getElementById("nom").value;
-let tel=document.getElementById("tel").value;
 
-let msg="Bonjour je suis "+nom+" ("+tel+") je veux commander un service.";
+let nom = document.getElementById("nom").value;
+let tel = document.getElementById("tel").value;
+
+if(!nom || !tel){
+alert("Remplis ton nom et téléphone");
+return;
+}
+
+let msg = "Bonjour je suis "+nom+" ("+tel+") je veux commander un service.";
 
 window.open("https://wa.me/243848681325?text="+encodeURIComponent(msg));
 }
+
 </script>
 
 </body>
