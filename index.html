@@ -6,9 +6,9 @@
 
 <title>C-SERVICE BUSINESS | PRO MAX</title>
 
-<meta name="google-site-verification" content="nIEiJchOlzVGOOZVTM_5C5P0ws04_wBIO-PdKDNcbbI" />
-<meta name="robots" content="index, follow">
-<link rel="icon" href="logo.png">">
+<meta name="description" content="Création site web, montage vidéo, design logo - C-SERVICE BUSINESS">
+
+<link rel="icon" href="logo.png">
 
 <style>
 
@@ -19,41 +19,30 @@ scroll-behavior: smooth;
 body{
 margin:0;
 font-family:Arial;
-background:#0b1220;
+background:linear-gradient(135deg,#0b1220,#020617);
 color:white;
 }
-.hero-img{
-width:180px;
-margin:15px auto;
-display:block;
-border-radius:15px;
-animation: floatImg 3s ease-in-out infinite;
-box-shadow:0 10px 30px rgba(0,0,0,0.5);
-}
 
-@keyframes floatImg{
-0%{transform:translateY(0px);}
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0px);}
-}
 /* HEADER */
 header{
 padding:18px;
-background:#0f172a;
+background:#020617;
 text-align:center;
 color:#38bdf8;
-font-size:20px;
+font-size:22px;
 font-weight:bold;
+letter-spacing:1px;
 }
 
 /* MENU */
 nav{
 display:flex;
 justify-content:space-around;
-background:#111827;
-padding:10px;
+background:#020617;
+padding:12px;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 nav a{
@@ -64,45 +53,66 @@ font-size:14px;
 
 /* HERO */
 .hero{
-padding:20px;
+padding:30px 20px;
 text-align:center;
 }
 
 .hero h2{
 color:#38bdf8;
+font-size:26px;
 }
-border:2px solid #38bdf8;
+
 .hero p{
 color:#cbd5e1;
 }
-  
-/* BUTTON APP */
-.app-btn{
-text-align:center;
-margin:15px;
+
+/* IMAGE ANIMÉE */
+.hero-img{
+width:200px;
+margin:20px auto;
+display:block;
+border-radius:15px;
+animation: floatImg 3s ease-in-out infinite;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-.app-btn a{
-background:#38bdf8;
+@keyframes floatImg{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0px);}
+}
+
+/* BUTTONS */
+.app-btn a, .open-app{
+display:inline-block;
+background:linear-gradient(45deg,#38bdf8,#22c55e);
 color:white;
 padding:12px 18px;
 border-radius:8px;
 text-decoration:none;
 font-weight:bold;
+margin:10px;
 }
 
 /* CONTAINER */
 .container{
-padding:20px;
+padding:25px;
 text-align:center;
 animation: fadeIn 0.8s ease-in;
 }
 
+/* CARD */
 .card{
 background:#1e293b;
 padding:20px;
-margin:10px;
-border-radius:10px;
+margin:12px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 10px 30px rgba(0,0,0,0.7);
 }
 
 /* BUTTONS */
@@ -118,14 +128,14 @@ font-weight:bold;
 .pay{background:#22c55e;}
 .whatsapp{background:#25D366;color:white;}
 
-/* FLOAT WHATSAPP */
+/* FLOAT WA */
 .float-wa{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
 color:white;
-padding:12px 15px;
+padding:14px 16px;
 border-radius:50px;
 text-decoration:none;
 font-weight:bold;
@@ -135,7 +145,7 @@ font-weight:bold;
 footer{
 text-align:center;
 padding:20px;
-background:#0f172a;
+background:#020617;
 margin-top:30px;
 font-size:12px;
 }
@@ -145,11 +155,8 @@ font-size:12px;
 from {opacity:0; transform:translateY(20px);}
 to {opacity:1; transform:translateY(0);}
 }
-section{
-scroll-margin-top:80px;
-}
-</style>
 
+</style>
 </head>
 
 <body>
@@ -165,29 +172,32 @@ C-SERVICE BUSINESS 💼 | PRO MAX
 <a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
 
-<a href="https://haddock619.github.io/c-service-businness/" target="_blank">
+<a class="open-app"
+href="intent://haddock619.github.io/c-service-businness/#Intent;scheme=https;action=android.intent.action.VIEW;package=com.webtoapp;end">
 📱 App
 </a>
 </nav>
 
-<!-- ACCUEIL -->
+<!-- HERO -->
 <div class="hero" id="accueil">
 
-<h2>🚀 C-SERVICE BUSINESS</h2>
+<h2>🚀 Boost ton business maintenant</h2>
 
 <img class="hero-img" src="https://i.imgur.com/8Km9tLL.png" alt="business">
 
-<p>Nous créons des solutions digitales professionnelles pour booster ton activité</p>
+<p>Sites web • Vidéos • Logos • Marketing digital</p>
 
 <div class="app-btn">
 <a href="#services">Voir nos services</a>
+<a href="https://wa.me/243848681325">🔥 Commander</a>
 </div>
 
 </div>
+
 <!-- SERVICES -->
 <div class="container" id="services">
 
-<h2>Choisis ton service</h2>
+<h2>💼 Nos services</h2>
 
 <div class="card">
 🌐 Site Web Pro - 50$
@@ -208,23 +218,29 @@ C-SERVICE BUSINESS 💼 | PRO MAX
 
 <!-- PORTFOLIO -->
 <div class="container" id="portfolio">
-
 <h2>📁 Nos réalisations</h2>
 
-<div class="card">✔ Logo professionnel créé</div>
-<div class="card">✔ Sites web business réalisés</div>
-<div class="card">✔ Montages vidéo publicitaires</div>
+<div class="card">✔ Logos professionnels</div>
+<div class="card">✔ Sites web modernes</div>
+<div class="card">✔ Vidéos publicitaires</div>
+
+</div>
+
+<!-- TEMOIGNAGES -->
+<div class="container">
+<h2>⭐ Témoignages</h2>
+
+<div class="card">"Service rapide et professionnel 🔥"</div>
+<div class="card">"Mon business a évolué grâce à eux"</div>
 
 </div>
 
 <!-- CONTACT -->
 <div class="container" id="contact">
 
-<h2>📞 Contact & Commande</h2>
+<h2>📞 Contact</h2>
 
 <div class="card">
-
-<h3>Commande rapide</h3>
 
 <input id="nom" placeholder="Ton nom"><br><br>
 <input id="tel" placeholder="Téléphone"><br><br>
@@ -237,14 +253,14 @@ Commander via WhatsApp
 
 </div>
 
-<!-- FLOAT WHATSAPP -->
+<!-- FLOAT WA -->
 <a class="float-wa"
-href="https://wa.me/243848681325?text=Bonjour%20je%20veux%20commander">
-💬 WhatsApp
+href="https://wa.me/243848681325">
+💬
 </a>
 
 <footer>
-© 2026 C-SERVICE BUSINESS | Tous droits réservés
+© 2026 C-SERVICE BUSINESS
 </footer>
 
 <script>
@@ -259,9 +275,7 @@ alert("Remplis ton nom et téléphone");
 return;
 }
 
-alert("Commande envoyée sur WhatsApp ✔");
-
-window.open("https://wa.me/243848681325?text=Je%20veux%20payer%20"+service+"%20-"+prix+"$");
+window.open("https://wa.me/243848681325?text=Je veux payer "+service+" - "+prix+"$");
 }
 
 function whatsapp(){
@@ -274,7 +288,7 @@ alert("Remplis ton nom et téléphone");
 return;
 }
 
-let msg = "Bonjour je suis "+nom+" ("+tel+") je veux commander un service.";
+let msg = "Bonjour je suis "+nom+" ("+tel+") je veux commander.";
 
 window.open("https://wa.me/243848681325?text="+encodeURIComponent(msg));
 }
