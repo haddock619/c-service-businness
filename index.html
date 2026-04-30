@@ -1,214 +1,112 @@
 <!DOCTYPE html><html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>C-SERVICE BUSINESS | Agence Digitale Pro Max</title><meta name="description" content="C-SERVICE BUSINESS - Création de sites web, montage vidéo, design graphique et solutions digitales professionnelles.">
-<meta name="keywords" content="site web, développeur, montage vidéo, design, agence digitale">
-<meta name="author" content="C-SERVICE BUSINESS"><style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>C-SERVICE BUSINESS | Paiement & Services</title><style>
 body{
 margin:0;
 font-family:Arial;
 background:#0b1220;
 color:white;
-scroll-behavior:smooth;
 }
 
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 30px;
-background:#0f172a;
-position:sticky;
-top:0;
-z-index:1000;
-border-bottom:1px solid #1e293b;
-}
-
-nav h1{
-color:#38bdf8;
-font-size:20px;
-}
-
-nav a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-transition:0.3s;
-}
-
-nav a:hover{
-color:#38bdf8;
-}
-
-/* HERO */
-.hero{
-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:linear-gradient(135deg,#0f172a,#1e293b);
+header{
 padding:20px;
-}
-
-.hero h2{
-font-size:45px;
-color:#38bdf8;
-animation:fade 2s ease-in-out;
-}
-
-.hero p{
-max-width:600px;
-color:#cbd5e1;
-}
-
-.btn{
-padding:12px 25px;
-background:#38bdf8;
-border:none;
-border-radius:8px;
-margin-top:20px;
-cursor:pointer;
-font-weight:bold;
-transition:0.3s;
-}
-
-.btn:hover{
-background:white;
-}
-
-/* SECTIONS */
-section{
-padding:70px 20px;
+background:#0f172a;
 text-align:center;
-}
-
-.title{
-font-size:30px;
 color:#38bdf8;
-margin-bottom:20px;
+font-size:22px;
 }
 
-/* SERVICES */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.container{
+padding:20px;
+text-align:center;
 }
 
 .card{
 background:#1e293b;
 padding:20px;
-border-radius:12px;
-transition:0.3s;
+margin:10px;
+border-radius:10px;
 }
 
-.card:hover{
-transform:translateY(-10px);
+button{
+padding:10px 15px;
+margin:5px;
+border:none;
+border-radius:6px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.pay{
+background:#22c55e;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.paybox{
 background:#334155;
+padding:15px;
+border-radius:10px;
+margin-top:20px;
 }
 
-/* PORTFOLIO */
-.portfolio{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.box{
-background:#1e293b;
-padding:40px;
-border-radius:12px;
-}
-
-/* CONTACT */
-input,textarea{
+input{
 width:80%;
 padding:10px;
 margin:5px;
 border-radius:6px;
 border:none;
-background:#334155;
-color:white;
-}
-
-button{
-cursor:pointer;
-}
-
-/* WHATSAPP BUTTON */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 10px black;
-}
-
-/* ANIMATION */
-@keyframes fade{
-from{opacity:0;transform:translateY(-20px);}
-to{opacity:1;transform:translateY(0);}
 }
 
 footer{
-background:#0f172a;
+text-align:center;
 padding:20px;
-margin-top:40px;
-border-top:1px solid #1e293b;
+background:#0f172a;
+margin-top:30px;
+}
+</style></head><body><header>
+C-SERVICE BUSINESS 💼 | PAIEMENT & SERVICES
+</header><div class="container"><h2>Choisis ton service</h2><div class="card">
+🌐 Site Web Pro - 50$
+<button class="pay" onclick="payer('Site Web Pro',50)">Payer</button>
+</div><div class="card">
+🎬 Montage Vidéo - 30$
+<button class="pay" onclick="payer('Montage Vidéo',30)">Payer</button>
+</div><div class="card">
+🎨 Design Logo - 20$
+<button class="pay" onclick="payer('Design Logo',20)">Payer</button>
+</div><!-- PAY BOX --><div class="paybox">
+<h3>Paiement rapide</h3><input id="nom" placeholder="Ton nom"><br>
+<input id="tel" placeholder="Téléphone"><br>
+
+<button class="whatsapp" onclick="whatsapp()">Commander via WhatsApp</button>
+
+</div></div><footer>
+© 2026 C-SERVICE BUSINESS
+</footer><script>
+
+let serviceChoisi = "";
+
+function payer(service, prix){
+serviceChoisi = service;
+
+alert("Service: " + service + "\nPrix: " + prix + "$\n\n👉 Paiement manuel activé");
+
+window.open("https://wa.me/243848681325?text=Je%20veux%20payer%20" + service + "%20-%20" + prix + "$");
 }
 
-</style></head><body><nav>
-<h1>C-SERVICE</h1>
-<div>
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#contact">Contact</a>
-</div>
-</nav><!-- HERO --><section class="hero">
-<h2>Agence Digitale PRO MAX</h2>
-<p>Nous créons des sites web puissants, des vidéos virales et des designs professionnels pour faire exploser votre business.</p>
-<button class="btn" onclick="alert('Bienvenue chez C-SERVICE BUSINESS 🚀')">Démarrer</button>
-</section><!-- SERVICES --><section id="services">
-<h2 class="title">Nos Services Premium</h2><div class="grid"><div class="card">
-<h3>🌐 Sites Web Pro</h3>
-<p>Sites modernes, rapides et SEO optimisés.</p>
-</div><div class="card">
-<h3>🎬 Montage Vidéo</h3>
-<p>Vidéos TikTok, YouTube et publicités virales.</p>
-</div><div class="card">
-<h3>🎨 Design Pro</h3>
-<p>Logos, flyers et branding complet.</p>
-</div><div class="card">
-<h3>📈 Marketing Digital</h3>
-<p>Boost de visibilité et croissance réseaux sociaux.</p>
-</div></div>
-</section><!-- PORTFOLIO --><section id="portfolio">
-<h2 class="title">Portfolio</h2><div class="portfolio">
-<div class="box">Site Business</div>
-<div class="box">App Mobile</div>
-<div class="box">Logo Design</div>
-<div class="box">Publicité Vidéo</div>
-</div></section><!-- CONTACT --><section id="contact">
-<h2 class="title">Contact</h2><form onsubmit="alert('Message envoyé !'); return false;">
-<input type="text" placeholder="Nom">
-<br>
-<input type="email" placeholder="Email">
-<br>
-<textarea rows="4" placeholder="Message"></textarea>
-<br>
-<button class="btn">Envoyer</button>
-</form></section><footer>
-<p>© 2026 C-SERVICE BUSINESS - Tous droits réservés</p>
-</footer><!-- WHATSAPP --><a class="whatsapp" href="https://wa.me/243850406200" target="_blank">💬</a>
+function whatsapp(){
+let nom = document.getElementById("nom").value;
+let tel = document.getElementById("tel").value;
 
-</body>
+let msg = "Bonjour je suis " + nom + " (" + tel + ") je veux commander un service.";
+
+window.open("https://wa.me/243848681325?text=" + encodeURIComponent(msg));
+}
+
+</script></body>
 </html>
