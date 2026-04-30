@@ -1,7 +1,11 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>C-SERVICE BUSINESS | Paiement & Services</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>C-SERVICE BUSINESS | PRO MAX</title>
+
+<style>
 body{
 margin:0;
 font-family:Arial;
@@ -9,14 +13,48 @@ background:#0b1220;
 color:white;
 }
 
+/* HEADER */
 header{
-padding:20px;
+padding:18px;
 background:#0f172a;
 text-align:center;
 color:#38bdf8;
-font-size:22px;
+font-size:20px;
+font-weight:bold;
 }
 
+/* MENU */
+nav{
+display:flex;
+justify-content:space-around;
+background:#111827;
+padding:10px;
+position:sticky;
+top:0;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+}
+
+/* BUTTON APP */
+.app-btn{
+text-align:center;
+margin:15px;
+}
+
+.app-btn a{
+background:#38bdf8;
+color:white;
+padding:12px 18px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* CONTAINER */
 .container{
 padding:20px;
 text-align:center;
@@ -29,6 +67,7 @@ margin:10px;
 border-radius:10px;
 }
 
+/* BUTTONS */
 button{
 padding:10px 15px;
 margin:5px;
@@ -38,81 +77,110 @@ cursor:pointer;
 font-weight:bold;
 }
 
-.pay{
-background:#22c55e;
-}
+.pay{background:#22c55e;}
+.whatsapp{background:#25D366;color:white;}
 
-.whatsapp{
+/* FLOAT WHATSAPP */
+.float-wa{
+position:fixed;
+bottom:20px;
+right:20px;
 background:#25D366;
 color:white;
+padding:12px 15px;
+border-radius:50px;
+text-decoration:none;
+font-weight:bold;
 }
 
-.paybox{
-background:#334155;
-padding:15px;
-border-radius:10px;
-margin-top:20px;
-}
-
-input{
-width:80%;
-padding:10px;
-margin:5px;
-border-radius:6px;
-border:none;
-}
-
+/* FOOTER */
 footer{
 text-align:center;
 padding:20px;
 background:#0f172a;
 margin-top:30px;
+font-size:12px;
 }
-</style></head><body><header>
-C-SERVICE BUSINESS 💼 | PAIEMENT & SERVICES
-</header><div style="text-align:center; margin:15px;">
-  <a href="intent://haddock619.github.io/c-service-businness/#Intent;scheme=https;package=com.webtoapp;end"
-     style="background:#38bdf8;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:bold;">
-    📱 Ouvrir l'application
-  </a>
+</style>
+
+</head>
+<body>
+
+<header>
+C-SERVICE BUSINESS 💼 | PRO MAX
+</header>
+
+<!-- MENU -->
+<nav>
+<a href="#">Accueil</a>
+<a href="#">Services</a>
+<a href="#">Paiement</a>
+<a href="https://haddock619.github.io/c-service-businness/">Site</a>
+</nav>
+
+<!-- BOUTON OUVRIR APP -->
+<div class="app-btn">
+<a href="intent://haddock619.github.io/c-service-businness/#Intent;scheme=https;package=com.webtoapp;end">
+📱 Ouvrir l'application
+</a>
 </div>
-  <div class="container"><h2>Choisis ton service</h2><div class="card">
+
+<div class="container">
+
+<h2>Choisis ton service</h2>
+
+<div class="card">
 🌐 Site Web Pro - 50$
 <button class="pay" onclick="payer('Site Web Pro',50)">Payer</button>
-</div><div class="card">
+</div>
+
+<div class="card">
 🎬 Montage Vidéo - 30$
 <button class="pay" onclick="payer('Montage Vidéo',30)">Payer</button>
-</div><div class="card">
+</div>
+
+<div class="card">
 🎨 Design Logo - 20$
 <button class="pay" onclick="payer('Design Logo',20)">Payer</button>
-</div><!-- PAY BOX --><div class="paybox">
-<h3>Paiement rapide</h3><input id="nom" placeholder="Ton nom"><br>
-<input id="tel" placeholder="Téléphone"><br>
+</div>
 
-<button class="whatsapp" onclick="whatsapp()">Commander via WhatsApp</button>
+<!-- CONTACT -->
+<div class="card">
+<h3>Commande rapide</h3>
+<input id="nom" placeholder="Ton nom"><br><br>
+<input id="tel" placeholder="Téléphone"><br><br>
 
-</div></div><footer>
-© 2026 C-SERVICE BUSINESS
-</footer><script>
+<button class="whatsapp" onclick="whatsapp()">
+Commander via WhatsApp
+</button>
+</div>
 
-let serviceChoisi = "";
+</div>
 
+<!-- FLOAT WHATSAPP -->
+<a class="float-wa"
+href="https://wa.me/243848681325?text=Bonjour%20je%20veux%20commander">
+💬 WhatsApp
+</a>
+
+<footer>
+© 2026 C-SERVICE BUSINESS | Tous droits réservés
+</footer>
+
+<script>
 function payer(service, prix){
-serviceChoisi = service;
-
-alert("Service: " + service + "\nPrix: " + prix + "$\n\n👉 Paiement manuel activé");
-
-window.open("https://wa.me/243848681325?text=Je%20veux%20payer%20" + service + "%20-%20" + prix + "$");
+window.open("https://wa.me/243848681325?text=Je%20veux%20payer%20"+service+"%20-"+prix+"$");
 }
 
 function whatsapp(){
-let nom = document.getElementById("nom").value;
-let tel = document.getElementById("tel").value;
+let nom=document.getElementById("nom").value;
+let tel=document.getElementById("tel").value;
 
-let msg = "Bonjour je suis " + nom + " (" + tel + ") je veux commander un service.";
+let msg="Bonjour je suis "+nom+" ("+tel+") je veux commander un service.";
 
-window.open("https://wa.me/243850406200?text=" + encodeURIComponent(msg));
+window.open("https://wa.me/243848681325?text="+encodeURIComponent(msg));
 }
+</script>
 
-</script></body>
+</body>
 </html>
