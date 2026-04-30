@@ -22,7 +22,20 @@ font-family:Arial;
 background:#0b1220;
 color:white;
 }
+.hero-img{
+width:180px;
+margin:15px auto;
+display:block;
+border-radius:15px;
+animation: floatImg 3s ease-in-out infinite;
+box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
 
+@keyframes floatImg{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+}
 /* HEADER */
 header{
 padding:18px;
@@ -58,11 +71,11 @@ text-align:center;
 .hero h2{
 color:#38bdf8;
 }
-
+border:2px solid #38bdf8;
 .hero p{
 color:#cbd5e1;
 }
-
+  
 /* BUTTON APP */
 .app-btn{
 text-align:center;
@@ -132,7 +145,9 @@ font-size:12px;
 from {opacity:0; transform:translateY(20px);}
 to {opacity:1; transform:translateY(0);}
 }
-
+section{
+scroll-margin-top:80px;
+}
 </style>
 
 </head>
@@ -157,14 +172,18 @@ C-SERVICE BUSINESS 💼 | PRO MAX
 
 <!-- ACCUEIL -->
 <div class="hero" id="accueil">
+
 <h2>🚀 C-SERVICE BUSINESS</h2>
+
+<img class="hero-img" src="https://i.imgur.com/8Km9tLL.png" alt="business">
+
 <p>Nous créons des solutions digitales professionnelles pour booster ton activité</p>
 
 <div class="app-btn">
 <a href="#services">Voir nos services</a>
 </div>
-</div>
 
+</div>
 <!-- SERVICES -->
 <div class="container" id="services">
 
